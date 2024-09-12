@@ -3,21 +3,27 @@ import NavbarComponent from "../../components/NavbarComponent";
 import CardComponent from "../../components/CardComponent";
 import { useParams } from "react-router-dom";
 import { hitSearchMovies } from "../../store/action";
+import { useDispatch } from "react-redux";
 
 export default function SearchPage() {
     const params = useParams()
-    const query = params.query
-    console.log(query)
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        hitSearchMovies(query)
-    }, [])
+        getSearchMovies()
+    }, [params.query])
+
+    const getSearchMovies = async () => {
+        dispatch(hitSearchMovies(params.query))
+    }
 
     return (
-        <><h1>ini search</h1></>
+        <>
+            <NavbarComponent />
+            <CardComponent />
+        </>
+
     )
 
-    // const getMovies = async () => {
-    //     dispatch(hitsearchMovies())
-    // }
+
 }

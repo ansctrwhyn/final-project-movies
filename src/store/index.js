@@ -5,7 +5,8 @@ import { thunk } from 'redux-thunk'
 const initialState = {
     movies: [],
     movieDetail: [],
-    searchMovies: []
+    movieVideos: [],
+    similarMovies: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -14,8 +15,10 @@ const reducer = (state = initialState, action) => {
             return { ...state, movies: action.payload }
         case 'SET_MOVIE_DETAIL':
             return { ...state, movieDetail: action.payload }
-        case 'SET_SEARCH_MOVIES':
-            return { ...state, searchMovies: action.payload }
+        case 'SET_MOVIE_VIDEOS':
+            return { ...state, movieVideos: action.payload }
+        case 'SET_SIMILAR_MOVIES':
+            return { ...state, similarMovies: action.payload }
         default:
             return state
     }
