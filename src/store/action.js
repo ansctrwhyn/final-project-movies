@@ -19,7 +19,7 @@ export const hitSearchMovies = (query) => {
             const data = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${process.env.REACT_APP_API_KEY}`)
             const resultData = await data.json()
             dispatch({
-                type: 'SET_MOVIES',
+                type: 'SET_SEARCH_MOVIES',
                 payload: resultData
             })
         } catch (error) {

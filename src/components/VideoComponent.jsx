@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import '../style/style.css'
 
 export default function VideoComponent() {
     const videos = useSelector(state => state.movieVideos)
@@ -13,7 +14,7 @@ export default function VideoComponent() {
                 <div className="container">
                     <div className="video-row" style={{
                         display: 'flex',
-                        overflowX: 'scroll',
+                        overflowX: 'auto',
                         gap: '16px',
                         paddingBottom: '10px'
                     }}>
@@ -22,7 +23,7 @@ export default function VideoComponent() {
                                 minWidth: '300px',
                                 flex: '0 0 auto'
                             }}>
-                                <div className="card" style={{ backgroundColor: '#121212' }}>
+                                <div className="card hover-card" style={{ backgroundColor: '#121212' }}>
                                     <div className="embed-responsive embed-responsive-16by9">
                                         <iframe
                                             className="embed-responsive-item"

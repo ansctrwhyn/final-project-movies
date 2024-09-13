@@ -12,7 +12,9 @@ export default function NavbarComponent() {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top" style={{ backgroundColor: '#121212' }}>
             <div className="container-fluid">
-                <Link className="navbar-brand text-white" to="/home">FINPRO</Link>
+                <Link className="navbar-brand" to="/home">
+                    <h3 className="mb-0 text-white">FINPRO</h3>
+                </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i className="fa-solid fa-bars" style={{ color: '#ffffff' }}></i>
                 </button>

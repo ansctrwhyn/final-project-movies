@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import '../style/style.css'
 
 export default function CardComponent({ movies }) {
     return (
@@ -9,7 +10,7 @@ export default function CardComponent({ movies }) {
                 <h5>No results found</h5>
             ) : (
                 <>
-                    <div className="similar-row" style={{
+                    <div className="card-row" style={{
                         display: 'flex',
                         overflowX: 'auto',
                         gap: '16px',
@@ -17,12 +18,12 @@ export default function CardComponent({ movies }) {
                         whiteSpace: 'nowrap'
                     }}>
                         {movies.results.map((el, i) => (
-                            <div className="similar-item" key={i} style={{
+                            <div className="card-item" key={i} style={{
                                 minWidth: '300px',
                                 flex: '0 0 auto'
                             }}>
                                 <Link to={`/detail/${el.id}`} style={{ textDecoration: 'none', textAlign: "center" }}>
-                                    <div className="card shadow-sm text-white" style={{ backgroundColor: '#121212' }}>
+                                    <div className="card shadow-sm text-white hover-card" style={{ backgroundColor: '#121212' }}>
                                         <img src={`https://image.tmdb.org/t/p/w500${el.poster_path}`} className="card-img-top" alt={el.title} style={{ height: '400px', objectFit: 'cover' }} />
                                         <div className="card-body d-flex flex-column">
                                             <h5 className="card-title">{el.title}</h5>
@@ -33,6 +34,7 @@ export default function CardComponent({ movies }) {
                             </div>
                         ))}
                     </div>
+
                 </>
             )}
         </>
