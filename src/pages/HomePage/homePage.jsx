@@ -15,7 +15,7 @@ export default function HomePage() {
     const upcomingMovies = useSelector(state => state.upcomingMovies)
 
     useEffect(() => {
-        getMovies()
+        getTrendingMovies()
     }, [])
 
     useEffect(() => {
@@ -34,7 +34,7 @@ export default function HomePage() {
         getUpcomingMovies()
     }, [])
 
-    const getMovies = async () => {
+    const getTrendingMovies = async () => {
         dispatch(hitTrendingMovies())
     }
 
